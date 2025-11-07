@@ -1,0 +1,28 @@
+plugins = []
+headers = []
+redirects = []
+
+[functions]
+
+[functions."*"]
+
+[build]
+publish = "/Users/michaelehrlich/Downloads/Minimalist Avant-Garde Portfolio/dist"
+publishOrigin = "ui"
+commandOrigin = "ui"
+base = "/Users/michaelehrlich/Downloads/Minimalist Avant-Garde Portfolio"
+command = "npm run build"
+
+[build.environment]
+
+[build.processing]
+
+[build.processing.css]
+
+[build.processing.html]
+
+[build.processing.images]
+
+[build.processing.js]
+
+[build.services]
