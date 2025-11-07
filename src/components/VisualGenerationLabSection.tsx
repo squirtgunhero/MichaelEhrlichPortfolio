@@ -333,7 +333,7 @@ const VisualTile = memo(function VisualTile({ project, index }: VisualTileProps)
 
         {/* Label - bottom-left corner */}
         <motion.div
-          className="absolute bottom-0 left-0 right-0 px-6 py-5 pb-6 bg-gradient-to-t from-white/98 via-white/95 to-transparent backdrop-blur-sm rounded-b-sm"
+          className="absolute bottom-0 left-0 right-0 pl-3 pr-6 py-5 pb-6 bg-gradient-to-t from-white/98 via-white/95 to-transparent backdrop-blur-sm rounded-b-sm"
           initial={{ opacity: 0 }}
           animate={{
             opacity: isHovered ? 1 : 0.7,
