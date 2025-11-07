@@ -333,22 +333,22 @@ const VisualTile = memo(function VisualTile({ project, index }: VisualTileProps)
 
         {/* Label - bottom center */}
         <motion.div
-          className="absolute bottom-0 left-0 right-0 px-6 py-5 pb-6 bg-gradient-to-t from-white/98 via-white/95 to-transparent backdrop-blur-sm rounded-b-sm text-center"
+          className="absolute bottom-0 left-0 right-0 px-6 py-5 pb-6 bg-gradient-to-t from-white via-white/98 to-white/70 rounded-b-sm text-center"
           initial={{ opacity: 0 }}
           animate={{
-            opacity: isHovered ? 1 : 0.7,
+            opacity: isHovered ? 1 : 0.95,
           }}
           transition={{ duration: 0.28 }}
         >
           <motion.p
             className="text-[8px] uppercase"
             style={{
-              fontWeight: 400,
-              color: '#666',
+              fontWeight: 500,
+              color: '#111',
               letterSpacing: '0.02em',
             }}
             animate={{
-              opacity: isHovered ? 1 : 0.85,
+              opacity: isHovered ? 1 : 0.9,
               y: isHovered ? -1 : 0,
             }}
             transition={{ duration: 0.28 }}
