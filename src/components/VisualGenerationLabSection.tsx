@@ -1,11 +1,13 @@
 import { motion } from 'motion/react';
 import { useState, useEffect, useRef, memo } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { MagneticText } from './MagneticText';
 import { getVisualGenerationImages, urlFor, type VisualGenerationImage } from '../lib/sanity';
 
 export const VisualGenerationLabSection = memo(function VisualGenerationLabSection() {
   const [visualProjects, setVisualProjects] = useState<VisualGenerationImage[]>([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchImages() {
@@ -143,7 +145,7 @@ export const VisualGenerationLabSection = memo(function VisualGenerationLabSecti
         {!loading && visualProjects.length > 0 && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20 lg:gap-24 max-w-[1200px] mx-auto mt-20">
             {visualProjects.map((project, index) => (
-              <VisualTile key={project._id} project={project} index={index} />
+              <VisualTile key={project._id} project={project} index={index} navigate={navigate} />
             ))}
           </div>
         )}
@@ -158,9 +160,10 @@ export const VisualGenerationLabSection = memo(function VisualGenerationLabSecti
 interface VisualTileProps {
   project: VisualGenerationImage;
   index: number;
+  navigate: (path: string) => void;
 }
 
-const VisualTile = memo(function VisualTile({ project, index }: VisualTileProps) {
+const VisualTile = memo(function VisualTile({ project, index, navigate }: VisualTileProps) {
   // Generate optimized image URL from Sanity - 16:9 aspect ratio to match AI Film Lab
   const imageUrl = urlFor(project.image)
     .width(1600)
@@ -199,6 +202,7 @@ const VisualTile = memo(function VisualTile({ project, index }: VisualTileProps)
       className="group cursor-pointer relative"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={() => navigate(`/gallery/${project.platform.toLowerCase()}`)}
     >
       {/* Aluminum reflection beneath */}
       <motion.div
