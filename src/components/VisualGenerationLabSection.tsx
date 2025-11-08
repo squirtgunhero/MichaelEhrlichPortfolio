@@ -13,7 +13,15 @@ export const VisualGenerationLabSection = memo(function VisualGenerationLabSecti
     async function fetchImages() {
       try {
         const data = await getVisualGenerationImages();
-        setVisualProjects(data);
+        // Show only one image per platform (the first/most recent one)
+        const uniquePlatforms = new Map<string, VisualGenerationImage>();
+        data.forEach((image) => {
+          const platform = image.platform.toLowerCase();
+          if (!uniquePlatforms.has(platform)) {
+            uniquePlatforms.set(platform, image);
+          }
+        });
+        setVisualProjects(Array.from(uniquePlatforms.values()));
       } catch (error) {
         console.error('Error fetching visual generation images:', error);
       } finally {
