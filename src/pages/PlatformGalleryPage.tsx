@@ -98,20 +98,6 @@ export function PlatformGalleryPage() {
                 {platform?.toUpperCase()}
               </motion.h1>
             </MagneticText>
-
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1.2, delay: 0.7 }}
-              className="text-[14px] tracking-wide max-w-xl mx-auto"
-              style={{
-                color: '#666',
-                fontWeight: 300,
-                letterSpacing: '0.06em',
-              }}
-            >
-              {images.length} {images.length === 1 ? 'image' : 'images'} generated with {platform}
-            </motion.p>
           </motion.div>
 
           {/* Loading State */}
