@@ -9,6 +9,7 @@ import { AmbientLight } from '../components/AmbientLight';
 import { MagneticText } from '../components/MagneticText';
 import { AIFilmLabSection } from '../components/AIFilmLabSection';
 import { VisualGenerationLabSection } from '../components/VisualGenerationLabSection';
+import { SimpleCursor } from '../components/SimpleCursor';
 import { throttle } from '../utils/performance';
 
 export function HomePage() {
@@ -67,6 +68,7 @@ export function HomePage() {
 
   return (
     <div className="bg-white min-h-screen relative">
+      <SimpleCursor />
       <Navigation activeSection={activeSection} onNavigate={handleNavigate} />
 
       {/* Hero Section */}

@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { getVisualGenerationImages, urlFor, type VisualGenerationImage } from '../lib/sanity';
 import { MagneticText } from '../components/MagneticText';
-import { CustomCursor } from '../components/CustomCursor';
+import { SimpleCursor } from '../components/SimpleCursor';
 
 export function PlatformGalleryPage() {
   const { platform } = useParams<{ platform: string }>();
@@ -30,7 +30,7 @@ export function PlatformGalleryPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <CustomCursor />
+      <SimpleCursor />
       {/* Back button */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
