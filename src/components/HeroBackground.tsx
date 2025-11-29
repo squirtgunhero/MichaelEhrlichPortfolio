@@ -16,18 +16,16 @@ export const HeroBackground = memo(function HeroBackground() {
       <motion.div
         className="absolute -top-32 -right-32 w-96 h-96"
         style={{
-          background: 'radial-gradient(circle, rgba(200, 210, 220, 0.25) 0%, rgba(220, 230, 240, 0.15) 40%, transparent 70%)',
-          filter: 'blur(40px)',
-          backdropFilter: 'blur(20px)',
+          background: 'radial-gradient(circle, rgba(119, 3, 204, 0.4) 0%, rgba(119, 3, 204, 0.2) 40%, transparent 70%)',
+          filter: 'blur(60px)',
         }}
         animate={{
           x: [-100, 150, -100],
           y: [-50, 100, -50],
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.6, 0.3],
+          scale: [1, 1.3, 1],
         }}
         transition={{
-          duration: 25,
+          duration: 8,
           repeat: Infinity,
           ease: 'easeInOut',
         }}
@@ -37,21 +35,19 @@ export const HeroBackground = memo(function HeroBackground() {
       <motion.div
         className="absolute -bottom-32 -left-32 w-[500px] h-[500px]"
         style={{
-          background: 'radial-gradient(circle, rgba(180, 195, 210, 0.3) 0%, rgba(210, 220, 235, 0.18) 45%, transparent 65%)',
-          filter: 'blur(50px)',
-          backdropFilter: 'blur(25px)',
+          background: 'radial-gradient(circle, rgba(119, 3, 204, 0.45) 0%, rgba(119, 3, 204, 0.25) 45%, transparent 65%)',
+          filter: 'blur(70px)',
         }}
         animate={{
           x: [100, -150, 100],
           y: [50, -100, 50],
-          scale: [1, 1.15, 1],
-          opacity: [0.35, 0.65, 0.35],
+          scale: [1, 1.2, 1],
         }}
         transition={{
-          duration: 30,
+          duration: 10,
           repeat: Infinity,
           ease: 'easeInOut',
-          delay: 5,
+          delay: 2,
         }}
       />
 
@@ -59,19 +55,17 @@ export const HeroBackground = memo(function HeroBackground() {
       <motion.div
         className="absolute top-1/3 -right-24 w-80 h-[600px]"
         style={{
-          background: 'linear-gradient(to left, rgba(190, 205, 220, 0.28) 0%, rgba(215, 225, 240, 0.15) 50%, transparent 80%)',
-          filter: 'blur(35px)',
-          backdropFilter: 'blur(15px)',
+          background: 'linear-gradient(to left, rgba(119, 3, 204, 0.35) 0%, rgba(119, 3, 204, 0.2) 50%, transparent 80%)',
+          filter: 'blur(50px)',
         }}
         animate={{
           y: [-80, 120, -80],
-          opacity: [0.25, 0.5, 0.25],
         }}
         transition={{
-          duration: 20,
+          duration: 7,
           repeat: Infinity,
           ease: 'easeInOut',
-          delay: 10,
+          delay: 4,
         }}
       />
 
@@ -79,19 +73,17 @@ export const HeroBackground = memo(function HeroBackground() {
       <motion.div
         className="absolute bottom-1/4 -left-24 w-80 h-[500px]"
         style={{
-          background: 'linear-gradient(to right, rgba(185, 200, 215, 0.32) 0%, rgba(205, 218, 235, 0.18) 50%, transparent 75%)',
-          filter: 'blur(45px)',
-          backdropFilter: 'blur(18px)',
+          background: 'linear-gradient(to right, rgba(119, 3, 204, 0.38) 0%, rgba(119, 3, 204, 0.22) 50%, transparent 75%)',
+          filter: 'blur(55px)',
         }}
         animate={{
           y: [100, -100, 100],
-          opacity: [0.3, 0.55, 0.3],
         }}
         transition={{
-          duration: 28,
+          duration: 9,
           repeat: Infinity,
           ease: 'easeInOut',
-          delay: 15,
+          delay: 6,
         }}
       />
 
@@ -100,14 +92,14 @@ export const HeroBackground = memo(function HeroBackground() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse at 70% 30%, transparent 0%, transparent 40%, rgba(195, 210, 225, 0.12) 70%, transparent 100%)',
-          backdropFilter: 'blur(2px)',
+            'radial-gradient(ellipse at 70% 30%, transparent 0%, transparent 40%, rgba(119, 3, 204, 0.15) 70%, transparent 100%)',
+          filter: 'blur(40px)',
         }}
         animate={{
-          opacity: [0.4, 0.8, 0.4],
+          opacity: [0.5, 1, 0.5],
         }}
         transition={{
-          duration: 12,
+          duration: 6,
           repeat: Infinity,
           ease: 'easeInOut',
         }}
