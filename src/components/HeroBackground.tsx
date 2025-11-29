@@ -12,17 +12,17 @@ export const HeroBackground = memo(function HeroBackground() {
         }}
       />
 
-      {/* Refractive wave 1 - top right periphery */}
+      {/* Refractive wave 1 - top right */}
       <motion.div
-        className="absolute -top-32 -right-32 w-96 h-96"
+        className="absolute top-0 right-0 w-[600px] h-[600px]"
         style={{
-          background: 'radial-gradient(circle, rgba(0, 156, 189, 0.4) 0%, rgba(0, 156, 189, 0.2) 40%, transparent 70%)',
-          filter: 'blur(60px)',
+          background: 'radial-gradient(circle, rgba(0, 156, 189, 0.5) 0%, rgba(0, 156, 189, 0.25) 40%, transparent 70%)',
+          filter: 'blur(80px)',
         }}
         animate={{
-          x: [-100, 150, -100],
-          y: [-50, 100, -50],
-          scale: [1, 1.3, 1],
+          x: [0, -200, 0],
+          y: [0, 150, 0],
+          scale: [1, 1.5, 1],
         }}
         transition={{
           duration: 8,
@@ -31,59 +31,60 @@ export const HeroBackground = memo(function HeroBackground() {
         }}
       />
 
-      {/* Refractive wave 2 - bottom left periphery */}
+      {/* Refractive wave 2 - bottom left */}
       <motion.div
-        className="absolute -bottom-32 -left-32 w-[500px] h-[500px]"
+        className="absolute bottom-0 left-0 w-[700px] h-[700px]"
         style={{
-          background: 'radial-gradient(circle, rgba(0, 156, 189, 0.45) 0%, rgba(0, 156, 189, 0.25) 45%, transparent 65%)',
-          filter: 'blur(70px)',
+          background: 'radial-gradient(circle, rgba(0, 156, 189, 0.55) 0%, rgba(0, 156, 189, 0.3) 45%, transparent 65%)',
+          filter: 'blur(90px)',
         }}
         animate={{
-          x: [100, -150, 100],
-          y: [50, -100, 50],
-          scale: [1, 1.2, 1],
+          x: [0, 200, 0],
+          y: [0, -150, 0],
+          scale: [1, 1.4, 1],
         }}
         transition={{
           duration: 10,
           repeat: Infinity,
           ease: 'easeInOut',
-          delay: 2,
+          delay: 3,
         }}
       />
 
-      {/* Refractive wave 3 - right edge */}
+      {/* Refractive wave 3 - top center */}
       <motion.div
-        className="absolute top-1/3 -right-24 w-80 h-[600px]"
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px]"
         style={{
-          background: 'linear-gradient(to left, rgba(0, 156, 189, 0.35) 0%, rgba(0, 156, 189, 0.2) 50%, transparent 80%)',
-          filter: 'blur(50px)',
+          background: 'radial-gradient(ellipse, rgba(0, 156, 189, 0.4) 0%, rgba(0, 156, 189, 0.2) 50%, transparent 80%)',
+          filter: 'blur(70px)',
         }}
         animate={{
-          y: [-80, 120, -80],
+          y: [0, 100, 0],
+          scaleX: [1, 1.2, 1],
         }}
         transition={{
           duration: 7,
           repeat: Infinity,
           ease: 'easeInOut',
-          delay: 4,
+          delay: 5,
         }}
       />
 
-      {/* Refractive wave 4 - left edge */}
+      {/* Refractive wave 4 - center floating */}
       <motion.div
-        className="absolute bottom-1/4 -left-24 w-80 h-[500px]"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px]"
         style={{
-          background: 'linear-gradient(to right, rgba(0, 156, 189, 0.38) 0%, rgba(0, 156, 189, 0.22) 50%, transparent 75%)',
-          filter: 'blur(55px)',
+          background: 'radial-gradient(circle, rgba(0, 156, 189, 0.25) 0%, rgba(0, 156, 189, 0.12) 50%, transparent 75%)',
+          filter: 'blur(100px)',
         }}
         animate={{
-          y: [100, -100, 100],
+          scale: [1, 1.3, 1],
+          rotate: [0, 180, 360],
         }}
         transition={{
-          duration: 9,
+          duration: 12,
           repeat: Infinity,
           ease: 'easeInOut',
-          delay: 6,
         }}
       />
 
