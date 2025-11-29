@@ -17,7 +17,7 @@ export const HeroBackground = memo(function HeroBackground() {
       x: 50 + Math.cos(angle) * distanceFromCenter * 50, // Center at 50%
       y: 50 + Math.sin(angle) * distanceFromCenter * 50,
       delay: i * 0.05,
-      size: 8 + Math.random() * 12,
+      size: 12 + Math.random() * 18,
       rotationSpeed: 15 + Math.random() * 10,
     };
   });
@@ -48,7 +48,7 @@ export const HeroBackground = memo(function HeroBackground() {
               opacity: 0,
             }}
             animate={{
-              opacity: [0, 0.15, 0.25, 0.15, 0],
+              opacity: [0, 0.3, 0.5, 0.3, 0],
               rotate: [0, 360],
               scale: [0.8, 1, 1.1, 1, 0.8],
               x: [
@@ -82,8 +82,8 @@ export const HeroBackground = memo(function HeroBackground() {
                     ? 'linear-gradient(135deg, rgba(196, 181, 253, 0.4), rgba(147, 197, 253, 0.3))'
                     : 'linear-gradient(135deg, rgba(224, 231, 255, 0.4), rgba(221, 214, 254, 0.3))',
                 borderRadius: '2px',
-                filter: 'blur(4px)',
-                backdropFilter: 'blur(8px)',
+                filter: 'blur(3px)',
+                backdropFilter: 'blur(6px)',
                 boxShadow:
                   cube.id % 2 === 0
                     ? '0 0 20px rgba(147, 197, 253, 0.3)'
