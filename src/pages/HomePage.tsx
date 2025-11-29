@@ -5,10 +5,7 @@ import { HeroBackground } from '../components/HeroBackground';
 import { PortfolioGrid } from '../components/PortfolioGrid';
 import { AboutSection } from '../components/AboutSection';
 import { ContactSection } from '../components/ContactSection';
-import { CustomCursor } from '../components/CustomCursor';
-import { IdleAnimations } from '../components/IdleAnimations';
 import { AmbientLight } from '../components/AmbientLight';
-import { SoundSystem } from '../components/SoundSystem';
 import { MagneticText } from '../components/MagneticText';
 import { AIFilmLabSection } from '../components/AIFilmLabSection';
 import { VisualGenerationLabSection } from '../components/VisualGenerationLabSection';
@@ -25,11 +22,11 @@ export function HomePage() {
   const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.95]);
   const y = useTransform(scrollYProgress, [0, 0.3], [0, 100]);
 
-  // Cycle through words every 3 seconds
+  // Cycle through words every 4 seconds (slower for better performance)
   useEffect(() => {
     const interval = setInterval(() => {
       setWordIndex((prev) => (prev + 1) % words.length);
-    }, 3000);
+    }, 4000);
     return () => clearInterval(interval);
   }, [words.length]);
 
@@ -70,9 +67,6 @@ export function HomePage() {
 
   return (
     <div className="bg-white min-h-screen relative">
-      <CustomCursor />
-      <IdleAnimations />
-      <SoundSystem />
       <Navigation activeSection={activeSection} onNavigate={handleNavigate} />
 
       {/* Hero Section */}
@@ -115,10 +109,10 @@ export function HomePage() {
                   <AnimatePresence mode="wait">
                     <motion.span
                       key={wordIndex}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -20 }}
-                      transition={{ duration: 0.5 }}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.3, ease: 'easeInOut' }}
                       className="inline-block"
                     >
                       {words[wordIndex]}
