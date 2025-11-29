@@ -16,7 +16,7 @@ export const HeroBackground = memo(function HeroBackground() {
       <motion.div
         className="absolute -top-32 -right-32 w-96 h-96"
         style={{
-          background: 'radial-gradient(circle, rgba(119, 3, 204, 0.4) 0%, rgba(119, 3, 204, 0.2) 40%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(0, 156, 189, 0.4) 0%, rgba(0, 156, 189, 0.2) 40%, transparent 70%)',
           filter: 'blur(60px)',
         }}
         animate={{
@@ -35,7 +35,7 @@ export const HeroBackground = memo(function HeroBackground() {
       <motion.div
         className="absolute -bottom-32 -left-32 w-[500px] h-[500px]"
         style={{
-          background: 'radial-gradient(circle, rgba(119, 3, 204, 0.45) 0%, rgba(119, 3, 204, 0.25) 45%, transparent 65%)',
+          background: 'radial-gradient(circle, rgba(0, 156, 189, 0.45) 0%, rgba(0, 156, 189, 0.25) 45%, transparent 65%)',
           filter: 'blur(70px)',
         }}
         animate={{
@@ -55,7 +55,7 @@ export const HeroBackground = memo(function HeroBackground() {
       <motion.div
         className="absolute top-1/3 -right-24 w-80 h-[600px]"
         style={{
-          background: 'linear-gradient(to left, rgba(119, 3, 204, 0.35) 0%, rgba(119, 3, 204, 0.2) 50%, transparent 80%)',
+          background: 'linear-gradient(to left, rgba(0, 156, 189, 0.35) 0%, rgba(0, 156, 189, 0.2) 50%, transparent 80%)',
           filter: 'blur(50px)',
         }}
         animate={{
@@ -73,7 +73,7 @@ export const HeroBackground = memo(function HeroBackground() {
       <motion.div
         className="absolute bottom-1/4 -left-24 w-80 h-[500px]"
         style={{
-          background: 'linear-gradient(to right, rgba(119, 3, 204, 0.38) 0%, rgba(119, 3, 204, 0.22) 50%, transparent 75%)',
+          background: 'linear-gradient(to right, rgba(0, 156, 189, 0.38) 0%, rgba(0, 156, 189, 0.22) 50%, transparent 75%)',
           filter: 'blur(55px)',
         }}
         animate={{
@@ -92,7 +92,7 @@ export const HeroBackground = memo(function HeroBackground() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse at 70% 30%, transparent 0%, transparent 40%, rgba(119, 3, 204, 0.15) 70%, transparent 100%)',
+            'radial-gradient(ellipse at 70% 30%, transparent 0%, transparent 40%, rgba(0, 156, 189, 0.15) 70%, transparent 100%)',
           filter: 'blur(40px)',
         }}
         animate={{
