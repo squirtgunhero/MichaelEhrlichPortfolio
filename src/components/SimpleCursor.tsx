@@ -39,8 +39,8 @@ export function SimpleCursor() {
       <motion.div
         className="pointer-events-none fixed top-0 left-0 z-[9999]"
         animate={{
-          x: position.x - 12,
-          y: position.y - 12,
+          x: position.x - 16,
+          y: position.y - 16,
         }}
         transition={{
           type: 'spring',
@@ -50,12 +50,10 @@ export function SimpleCursor() {
         }}
       >
         {/* Outer ring */}
-        <div
-          className="w-6 h-6 rounded-full border-2 border-slate-800"
-          style={{
-            mixBlendMode: 'difference',
-          }}
-        />
+        <div className="relative w-8 h-8 rounded-full border-2 border-black bg-white/10 backdrop-blur-sm">
+          {/* Center dot */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-black" />
+        </div>
       </motion.div>
     </>
   );
