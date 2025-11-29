@@ -86,16 +86,6 @@ export function HomePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.6, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
-            <motion.p
-              className="text-xs tracking-[0.5em] uppercase text-slate-400 mb-8"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1.2, delay: 1.2 }}
-              style={{ y: heroTextY1 }}
-            >
-              Portfolio 2025
-            </motion.p>
-
             <MagneticText strength={0.12} range={150}>
               <motion.h1
                 className="text-6xl md:text-8xl text-slate-800 tracking-tighter mb-8 leading-none"
