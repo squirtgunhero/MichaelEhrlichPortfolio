@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { motion, useScroll, useTransform } from 'motion/react';
+import { motion, useScroll, useTransform, AnimatePresence } from 'motion/react';
 import { Navigation } from '../components/Navigation';
 import { HeroBackground } from '../components/HeroBackground';
 import { PortfolioGrid } from '../components/PortfolioGrid';
@@ -16,12 +16,22 @@ import { throttle } from '../utils/performance';
 
 export function HomePage() {
   const [activeSection, setActiveSection] = useState('hero');
+  const [wordIndex, setWordIndex] = useState(0);
+  const words = ['Invisible', 'Impossible', 'Unique', 'Bespoke'];
   const { scrollYProgress } = useScroll();
   
   // Motion transforms - these are already optimized by Framer Motion
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.95]);
   const y = useTransform(scrollYProgress, [0, 0.3], [0, 100]);
+
+  // Cycle through words every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setWordIndex((prev) => (prev + 1) % words.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [words.length]);
 
   useEffect(() => {
     // Throttled scroll handler for better performance
@@ -100,7 +110,21 @@ export function HomePage() {
               >
                 Designing
                 <br />
-                <span className="text-slate-400">the Invisible</span>
+                <span className="text-slate-400">
+                  the{' '}
+                  <AnimatePresence mode="wait">
+                    <motion.span
+                      key={wordIndex}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -20 }}
+                      transition={{ duration: 0.5 }}
+                      className="inline-block"
+                    >
+                      {words[wordIndex]}
+                    </motion.span>
+                  </AnimatePresence>
+                </span>
               </motion.h1>
             </MagneticText>
 
